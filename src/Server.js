@@ -1,7 +1,7 @@
 import Express from 'express'
 import cors from 'cors'
 import sequelize from './database/sequelize.js'
-import routes from './routes.js'
+import routes from './Routes.js'
 
 const port = 3300
 

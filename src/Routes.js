@@ -9,26 +9,19 @@ const routes = Router()
 
 routes.post('/cadastro', async (req,res) =>{
     try {
-        const foi = await CadastrarUsuario(req.body);
-        return res.status(201).json(foi);
+        await CadastrarUsuario(req.body);
+        return res.status(201).send("ok");
     } catch(error) {
-
         return res.status(400).json({ erro: error.message })
-
-        /*if(error instanceof UsuarioCadastradoError) {
-            return res.status(400).json({ erro: error.message })
-        } else {
-            return res.status(500).json({ erro: "Erro interno no servidor" });
-        }*/
     }
 });
 
-routes.post('/login', async (req, res)=>{
+routes.get('/login', async (req, res)=>{
     try{
         await LoginUsuario(req.body);
         return res.status(201).send("ok");
-    }catch(err){
-        return res.status(400).json({error: err.message})
+    }catch(error){
+        return res.status(400).json({error: "erro"})
     }
 })
 
@@ -36,9 +29,11 @@ routes.post('/superiores',async(req,res)=>{
     try{
         await Superiores(req.body)
         return res.status(201).send("ok")
-    }catch(err){
+    }catch(error){
         return res.status(400).json({error: err.message})
     }
 })
+
+
 
 export default routes
