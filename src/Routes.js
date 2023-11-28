@@ -34,6 +34,4 @@ routes.post('/superiores',async(req,res)=>{
     }
 })
 
-
-
 export default routes

@@ -23,7 +23,6 @@ const exercicioSchema = sequelize.define('exercicio',{
     },
     
 })
-
 exercicioSchema.belongsTo(usuarioSchema,{
     constraint: true,
     foreignKey:  'idUsuario'
