@@ -4,7 +4,6 @@ import LoginUsuario from './controllers/LoginUsuario.js'
 import CadastrarUsuario from './controllers/CadastrarUsuario.js'
 import Superiores from './controllers/superiores.js'
 
-//import { UsuarioCadastradoError } from "./errors/UsuarioCadastradoError.js";
 
 const routes = Router()
 
