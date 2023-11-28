@@ -1,6 +1,5 @@
 import usuarioSchema from "../database/usuarioSchema.js"
 
-
 const CadastrarUsuario = async (body) => {
     const { nome, email, senha } = body
 

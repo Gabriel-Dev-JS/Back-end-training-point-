@@ -2,11 +2,6 @@ import Sequelize from 'sequelize'
 
 import sequelize from './sequelize.js' 
 
-/*(async () => {
-    console.log("CRIANDO")
-    await sequelize.sync();
-})();*/
-
 const usuarioSchema = sequelize.define('usuario',{
     idUsuario:{
         primaryKey: true,
@@ -27,17 +22,6 @@ const usuarioSchema = sequelize.define('usuario',{
         allowNull:false
     }
 })
-
-
-
-/*, {
-    indexes: [{
-        unique: true,
-        fields: ["email"]
-    }]
-})*/
-
-//sequelize.sync();
 
 
 
