@@ -21,12 +21,15 @@ const exercicioSchema = sequelize.define('exercicio',{
         type: Sequelize.INTEGER,
         allowNull:false
     },
-    
+    tipo: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
 })
-exercicioSchema.belongsTo(usuarioSchema,{
-    constraint: true,
-    foreignKey:  'idUsuario'
-})
+
+usuarioSchema.hasMany(exercicioSchema)
+
+exercicioSchema.belongsTo(usuarioSchema)
 
 
 

@@ -2,17 +2,19 @@ import usuarioSchema from "../database/usuarioSchema.js"
 
 const CadastrarUsuario = async (body) => {
     const { nome, email, senha } = body
-    const usuario = await usuarioSchema.findAll({where:
+    
+    const usuario = await usuarioSchema.findOne({where:
         {email}
     })
-    if(usuario == false) {
+    
+    if(!usuario) {
         await usuarioSchema.create({
             nome:nome,
             email:email,
             senha:senha
         });
-    }else{
-        throw new Error()
+    } else {
+        throw new Error(`Usuário "${email}" já existe.`)
     }
 
     return 

@@ -21,6 +21,11 @@ const usuarioSchema = sequelize.define('usuario',{
         type: Sequelize.STRING,
         allowNull:false
     }
+}, {
+    indexes: [{
+        unique: true,
+        fields: ["email"]
+    }]
 })
 
 
